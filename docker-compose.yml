@@ -15,11 +15,11 @@ services:
 
   backend:
     build:
-      context: apps/backend
+      context: ./apps/backend
     container_name: simpmufy_backend
     restart: always
     volumes:
-      - ./backend:/var/www
+      - ./apps/backend:/var/www
     environment:
       - DB_HOST=mysql
       - DB_PORT=3306
@@ -33,13 +33,13 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: ./apps/frontend
     container_name: simpmufy_frontend
     restart: always
     ports:
     - "3000:3000"
     volumes:
-      - ./frontend:/app
+      - ./apps/frontend:/app
       - /app/node_modules
     networks:
       - simpmufy_net
