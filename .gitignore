@@ -1,12 +1,11 @@
 # Laravel
 /apps/backend/vendor/
-/apps/backend/node_modules/
 /apps/backend/storage/
 /apps/backend/bootstrap/cache/
 .env
 
-# Next.js
-/apps/frontend/.next/
+# Angular
+/apps/frontend/.angular/
 /apps/frontend/node_modules/
 
 # Docker
