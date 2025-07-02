@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Usuario extends Authenticatable
+class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -19,9 +19,13 @@ class Usuario extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'nombre',
+        'name',
         'email',
         'password',
+        'role',
+        'avatar',
+        'phone',
+        'active'
     ];
 
     /**
@@ -47,13 +51,13 @@ class Usuario extends Authenticatable
         ];
     }
 
-    public function pedidos(): HasMany
+    public function orders(): HasMany
     {
-        return $this->hasMany(Pedido::class);
+        return $this->hasMany(Order::class);
     }
 
-    public function resenas(): HasMany
+    public function reviews(): HasMany
     {
-        return $this->hasMany(Resena::class);
+        return $this->hasMany(Review::class);
     }
 }

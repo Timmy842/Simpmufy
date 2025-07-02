@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Categoria extends Model {
+class Category extends Model {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'slug'];
+    protected $fillable = ['name', 'slug'];
 
-    public function productos(): HasMany
+    public function products(): HasMany
     {
-        return $this->hasMany(Producto::class);
+        return $this->hasMany(Product::class);
     }
 }
